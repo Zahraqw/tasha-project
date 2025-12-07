@@ -1,6 +1,7 @@
 import { Card, CardContent, Input, Button } from "@/components/ui";
 import { FiUser, FiMail } from "react-icons/fi";
 import { LOGIN_TEXT } from "@/constants/texts";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   return (
@@ -19,7 +20,7 @@ export default function LoginForm() {
             <Input
               type="text"
               placeholder="Enter your name"
-              className="pl-10 border-[#349FBD] focus-visible:ring-[#349FBD]"
+              className="pl-10 py-5 border-[#349FBD] focus-visible:ring-[#349FBD]"
             />
           </div>
         </div>
@@ -29,7 +30,7 @@ export default function LoginForm() {
             <Input
               type="email"
               placeholder="Enter your email"
-              className="pl-10 border-[#349FBD] focus-visible:ring-[#349FBD]"
+              className="pl-10 py-5 border-[#349FBD] focus-visible:ring-[#349FBD]"
             />
           </div>
         </div>
@@ -44,15 +45,18 @@ export default function LoginForm() {
           </button>
         </div>
 
-        <Button className="w-full bg-[#2c4e9d] hover:bg-[#1d3470] text-white py-6 rounded-md">
+        <Button className="w-full text-md bg-[#2c4e9d] hover:bg-[#1d3470] text-white py-6 rounded-md">
           {LOGIN_TEXT.loginButton}
         </Button>
 
         <p className="text-gray-600">
           {LOGIN_TEXT.noAccount}{" "}
-          <span className="text-[#2c4e9d] font-semibold hover:underline cursor-pointer">
+          <Link
+            to="/signup"
+            className="text-[#2c4e9d] font-semibold hover:underline cursor-pointer"
+          >
             {LOGIN_TEXT.signup}
-          </span>
+          </Link>
         </p>
       </CardContent>
     </Card>
